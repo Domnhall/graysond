@@ -1,0 +1,453 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    background-color: #000;
+    
+}
+
+nav {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo{
+        margin-left: 80px;
+    }
+    .logo h1{
+        position: relative;
+        display: inline-block;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        overflow: hidden;
+        color: #fff;
+        white-space: nowrap;
+        animation: typing 10s steps(20, end) infinite, blink 0.7s step-end infinite;
+        border-right: 2px solid #333;
+    }
+}
+@keyframes typing {
+    0%, 100% { width: 0; }
+    50% { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    margin-right: 80px;
+}
+
+nav ul li {
+    display: inlin;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+   color: aquamarine;
+}
+nav ul li a::after{
+    color: aquamarine;
+}
+
+.proj{
+    width: 30vh;
+    height: 40vh;
+    border-radius: 10px;
+    background-color: rgb(0, 78, 78);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    .home{
+        padding-bottom: 60px;
+        margin-top: -20px;
+        h2{
+            color: #2516ff;
+        }
+    }
+}
+.photo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.photo-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5% 20%; /* Makes the image circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for better appearance */
+    width: 350px; /* Adjust width as needed */
+}
+
+
+.section {
+    display: none;
+    width: 100%;
+    .projects{
+        padding-bottom: 40px;
+    }
+    
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        .teem{
+            width: 300px; /* Adjust to your desired width */
+            height: 250px;
+            gap: 20px;
+        }
+        .teem .proj{
+            box-shadow: 0px 1px 10px #2516ff;
+            position: relative;
+            display: inline-block;
+            width: 300px; /* Adjust to your desired width */
+            height: 200px; /* Adjust to your desired height */
+            overflow: hidden;
+            li img{
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                transition: filter 0.3s, transform 0.3s;
+                filter: grayscale(100%);
+
+            }
+            li img:hover{
+                filter: grayscale(0%); /* Remove the grayscale on hover */
+                transform: scale(1.05); /* Slight zoom effect */
+            }
+            
+        }
+    }
+}
+
+@keyframes dingi{
+    0%{color: #591dff;}
+    20%{color: #00cf11;}
+    50%{color: #00f1e5;}
+    70%{color: #940000;}
+    100%{color: #591dff;}
+}
+.din{
+    animation-name: dingi;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    margin-left: 390px;
+}
+
+.experience{
+    margin-bottom: 70px;
+}
+.about{
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.abt {
+    text-align: center;
+    color: #444;
+    margin-top: -40px;
+}
+
+.about-section {
+    margin-bottom: 4rem;
+    margin-top: -30px;
+}
+
+.experience {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.experience-card {
+    background: #1d1d1d;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px #2516ff;
+    flex: 1 1 calc(30% - 20px);
+    min-width: 200px;
+    
+}
+.experience-card5 {
+    background: #1d1d1d;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px #2516ff;
+    flex: 1 1 calc(30% - 20px);
+    min-width: 200px;
+    width: 220px;
+    height: 40vh;
+    margin-bottom: 120px;
+}
+.experience-card h2 {
+    color: #fff;
+    margin: 0 0 10px;
+}
+
+.experience-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+}
+
+.experience-card button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.experience-card button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.section.active {
+    display: block;
+}
+
+.contact{
+    border-radius: 0% 2%;
+    box-shadow: 0px 1px 10px #2516ff;
+    padding-left: 20px;
+   form button{
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px #2516ff;
+    width: 80px;
+    height: 5vh;
+   }
+   form button:hover{
+    background-color: #222222;
+    cursor: pointer;
+   }
+   input{
+    outline: none;
+    border-radius: 10px;
+   }
+   textarea{
+    outline: none;
+    border-radius: 10px;
+   }
+}
+
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Background Overlay */
+.background-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.background-overlay.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #000;
+        padding: 10px;
+        z-index: 1001;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #000;
+    box-shadow: 0px 1px 5px #1b50ff;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    
+
+    .experience {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav .logo h1 {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 5px;
+    }
+    .about{
+        padding: 0px;
+    }
+    .projects{
+        padding-left: 10px;
+    }
+    .about-section{
+        margin-bottom: 120px;
+    }
+
+    .experience-card h2 {
+        font-size: 16px;
+    }
+
+    .experience-card p {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 920px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .about-section{
+        margin-left: -430px;
+        height: 5vh;
+        padding: 20px;
+        margin-bottom: 70px;
+        
+    }
+    .about{
+        padding-left: 0px;
+    }
+    
+    .home .dtls{
+      padding-top: 200px;
+    }
+    .section ul{
+        display: block
+    }
+    .section{
+        margin-top: -20px
+    }
+    nav .logo{
+        margin-left: 100px
+    }
+}
+
+@media (max-width: 1025px) {
+    nav .logo{
+        margin-left: 110px;
+    }
+   .section{
+       margin-top: -30px;
+   }
+   .about-section{
+       margin-left: -400px;
+   }
+   .home .dtls{
+       padding-top: 280px
+   }
+   .home .info{
+       margin-top: 5px
+   }
+   .experince{
+    padding: 0px;
+   }
+}
+@media (max-width: 1300px) {
+    .about{
+        padding-left: 0px;
+    }
+    .section{
+        padding-bottom: 90px;
+    }
+}

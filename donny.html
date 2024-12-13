@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donald's Portfolio</title>
+    <link rel="stylesheet" href="deco.css">
+    <link rel="icon" href="donny.jpg">
+<script src="Contact_form_to_email.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>Donald Grayson</h1>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <ul>
+            <li><a href="#home" data-target="home">Home</a></li>
+            <li><a href="#about" data-target="about">About</a></li>
+            <li><a href="#projects" data-target="projects">Projects</a></li>
+            <li><a href="#contact" data-target="contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="background-overlay"></div>
+    <div class="container">
+       
+        <div class="section home active">
+            <!-- Inserted photo -->
+            <div class="photo-container">
+                <img src="donny.jpg" alt="Profile Photo">
+            </div>
+            <div class="info">
+                <h2>This is my Portfolio</h2>
+                <P>I'm a Programmer</P>
+                <p>Navigate through the tabs to know more about me!</p>
+                <div class="cap">
+                </div>
+            </div>
+        </div>
+        
+              
+            
+        </div>
+
+        <div class="section about">
+            <h1 class="abt">About Me</h1>
+        <div class="about-section">
+            <p class="din">
+              I'm a Programmer with following skills in Web Development. <br>
+              for more contact: <br>
+              
+                Call: +250791284202 <br>
+                Email: newtonehaken@gmail.com <br>
+            
+            </p>
+        </div>
+
+        <div class="experience">
+            <div class="experience-card">
+                <h2>JAVASCRIPT</h2>
+                <p id="experience-count">0</p>
+                <button onclick="startCount('experience-count', 30)">Show</button>
+            </div>
+
+            <div class="experience-card">
+                <h2>CSS</h2>
+                <p id="projects-count">0</p>
+                <button onclick="startCount('projects-count', 75)">Show</button>
+            </div>
+
+            <div class="experience-card">
+                <h2>HTML</h2>
+                <p id="languages-count">0</p>
+                <button onclick="startCount('languages-count', 65)">Show</button>
+            </div>
+        </div>
+        <h2>Location</h2>
+        <div class="experience-card5">
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1734066093469!6m8!1m7!1sfKSQXLk8q0FebjrlMzJSSQ!2m2!1d-1.925464799161947!2d30.0705721043318!3f266.855689576373!4f0.16346500682587362!5f3.325193203789971" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        </div>
+
+        <div class="section projects">
+            <h2>My Projects</h2>
+            <ul>
+            <div class="teem">
+                <h2>School Project</h2>
+                <div class="proj">
+                <li><img src="school project.jpg" alt=""></li>
+                </div>
+             </div>  
+             <div class="teem">
+                <h2>Online Learning</h2>
+                <div class="proj">
+                <li><img src="kat.jpg" alt=""></li>
+                </div>
+             </div> 
+             <div class="teem">
+                <h2>App Store</h2>
+                <div class="proj">
+                <li><img src="app store.jpg" alt=""></li>
+                </div>
+             </div> 
+            </ul>
+        </div>
+
+        <div class="section contact">
+            <h2 class="tp">Contact Me</h2>
+            <form id="contact-form" action="https://formspree.io/f/xnnqywwa" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="subject">Subject:</label><br>
+                <input type="subject" id="subject" name="subject" required><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br>
+
+                <button type="submit" onclick="sendMail()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Powered by KAMERE</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav ul li a');
+            const sections = document.querySelectorAll('.section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = link.getAttribute('data-target');
+
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.classList.contains(target)) {
+                            section.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+
+        function startCount(elementId, target) {
+            let count = 0;
+            const speed = 50; // Adjust speed here
+            const increment = Math.ceil(target / speed);
+
+            const interval = setInterval(() => {
+                count += increment;
+                if (count >= target) {
+                    count = target;
+                    clearInterval(interval);
+                }
+                document.getElementById(elementId).innerText = count;
+            }, 20);
+        }
+
+       
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+    const overlay = document.querySelector('.background-overlay');
+
+    // Toggle Menu and Background Overlay
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+        overlay.classList.toggle('active');
+    });
+
+    // Close Menu when Clicking Outside
+    overlay.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        overlay.classList.remove('active');
+    });
+
+    // Highlight Section on Nav Link Click
+    const navItems = document.querySelectorAll('nav ul li a');
+    const sections = document.querySelectorAll('.section');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = item.getAttribute('data-target');
+            sections.forEach(section => {
+                section.classList.remove('active');
+                if (section.classList.contains(target)) {
+                    section.classList.add('active');
+                }
+            });
+            navLinks.classList.remove('show');
+            overlay.classList.remove('active');
+        });
+    });
+});
+
+
+
+
+    </script>
+   
+   <script src="https://smtpjs.com/v3/smtp.js">
+   </script>
+
+</body>
+</html>
